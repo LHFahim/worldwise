@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import City from "./components/City/City";
 import CityList from "./components/CityList/CityList";
 import CountriesList from "./components/CountriesList/CountriesList";
 import AppLayout from "./pages/AppLayout";
@@ -47,10 +48,14 @@ function App() {
           />
           <Route
             path="cities"
-            element={
-              <CityList cities={cities} isLoading={isLoading}></CityList>
-            }
+            element={<CityList cities={cities} isLoading={isLoading} />}
           />
+
+          <Route
+            path="cities/:id"
+            element={<City cities={cities} isLoading={isLoading} />}
+          />
+
           <Route
             path="countries"
             element={<CountriesList cities={cities} isLoading={isLoading} />}
