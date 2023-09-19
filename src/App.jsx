@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import City from "./components/City/City";
 import CityList from "./components/CityList/CityList";
 import CountriesList from "./components/CountriesList/CountriesList";
+import Form from "./components/Form/Form";
 import AppLayout from "./pages/AppLayout";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
@@ -40,12 +41,7 @@ function App() {
         <Route path="product" element={<Product />}></Route>
         <Route path="pricing" element={<Pricing />}></Route>
         <Route path="app" element={<AppLayout />}>
-          <Route
-            index
-            element={
-              <CityList cities={cities} isLoading={isLoading}></CityList>
-            }
-          />
+          <Route index element={<Navigate replace to="cities" />} />
           <Route
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
@@ -60,10 +56,10 @@ function App() {
             path="countries"
             element={<CountriesList cities={cities} isLoading={isLoading} />}
           ></Route>
-          <Route path="form" element={<p>Form</p>}></Route>
+          <Route path="form" element={<Form />} />
         </Route>
-        <Route path="login" element={<Login />}></Route>
-        <Route path="*" element={<PageNotFound />}></Route>
+        <Route path="login" element={<Login />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
