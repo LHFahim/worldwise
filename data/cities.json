@@ -13,30 +13,6 @@
       "id": 73930385
     },
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
       "cityName": "Chemnitz",
       "country": "Germany",
       "emoji": "🇩🇪",
@@ -59,6 +35,30 @@
         "lng": "19.327697753906254"
       },
       "id": 98443201
+    },
+    {
+      "cityName": "Jamalpur",
+      "country": "Bangladesh",
+      "emoji": "🇧🇩",
+      "date": "2023-09-20T09:04:00.947Z",
+      "notes": "",
+      "position": {
+        "lat": "24.93015410325078",
+        "lng": "89.98626708984376"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Hattingen",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2023-09-20T09:04:19.314Z",
+      "notes": "",
+      "position": {
+        "lat": "51.41168842924531",
+        "lng": "7.207031250000001"
+      },
+      "id": 98443203
     }
   ]
 }
