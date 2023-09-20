@@ -43,8 +43,68 @@ function CitiesProvider({ children }) {
     }
   }
 
+  async function createCity(newCity) {
+    // dispatch({ type: "loading" });
+
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${URL}/cities`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      setCities((cities) => [...cities, data]);
+
+      // dispatch({ type: "city/created", payload: data });
+    } catch {
+      alert(`There was an error creatin the city`);
+      // dispatch({
+      //   type: "rejected",
+      //   payload: "There was an error creating the city...",
+      // });
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    // dispatch({ type: "loading" });
+
+    try {
+      setIsLoading(true);
+      await fetch(`${URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities((cities) => cities.filter((city) => city.id !== id));
+
+      // dispatch({ type: "city/deleted", payload: id });
+    } catch {
+      alert(`There was an error deleting city`);
+      // dispatch({
+      //   type: "rejected",
+      //   payload: "There was an error deleting the city...",
+      // });
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
-    <CitiesContext.Provider value={{ cities, isLoading, currentCity, getCity }}>
+    <CitiesContext.Provider
+      value={{
+        cities,
+        isLoading,
+        currentCity,
+        getCity,
+        createCity,
+        deleteCity,
+      }}
+    >
       {children}
     </CitiesContext.Provider>
   );
